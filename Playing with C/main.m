@@ -13,7 +13,8 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        int number = 0;
+        int number;
+        int i;
         int round = 1;
         NSMutableArray *array = [NSMutableArray array];
         
@@ -23,8 +24,16 @@ int main(int argc, const char * argv[])
             [array addObject: @(number)];
             [array sortUsingSelector: @selector(compare:)];
             NSLog(@"Your list: %@", array);
+            
+            if (@(number) > [array objectAtIndex:]) {
+                [array replaceObjectAtIndex:() withObject: @(number)];
+            }
+            else {
+                do nothing
+            }
+            
             round++;
-        }
+        } // end while loop
         
     }
     return 0;
