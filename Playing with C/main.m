@@ -13,10 +13,19 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Hello, World!");
+        int number = 0;
+        int round = 1;
+        NSMutableArray *array = [NSMutableArray array];
+        
+        while (round <= 10) {
+            NSLog(@"Round #%i: Enter a number between 1 and 10", round);
+            scanf ("%i", &number);
+            [array addObject: @(number)];
+            [array sortUsingSelector: @selector(compare:)];
+            NSLog(@"Your list: %@", array);
+            round++;
+        }
         
     }
     return 0;
 }
-
