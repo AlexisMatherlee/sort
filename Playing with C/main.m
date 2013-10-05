@@ -13,28 +13,38 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        int number;
-        int i;
+        int kitten; // user input number
         int round = 1;
-        NSMutableArray *array = [NSMutableArray array];
-        
+        int array[10];
+        int i = 0; // input
+        int s; // sort / output
+        int tmp;
         while (round <= 10) {
-            NSLog(@"Round #%i: Enter a number between 1 and 10", round);
-            scanf ("%i", &number);
-            [array addObject: @(number)];
-            [array sortUsingSelector: @selector(compare:)];
-            NSLog(@"Your list: %@", array);
-            
-            if (@(number) > [array objectAtIndex:]) {
-                [array replaceObjectAtIndex:() withObject: @(number)];
-            }
-            else {
-                do nothing
-            }
-            
+            NSLog(@"Round #%i: Enter a number between 1 and 37", round);
+            scanf ("%i", &kitten);
+            array [round - 1] = kitten;
             round++;
-        } // end while loop
-        
+        }
+        i = 0;
+        while ( i < 10 ) {
+            s = 0;
+            while (s < 10 - i) {
+                if (array[s] > array[s + 1]) {
+                    tmp = array[s];
+                    array[s] = array[s + 1];
+                    array[s + 1] = tmp;
+                }
+                s++;
+            }
+            ++i;
+        }
+        NSLog(@"Your list:");
+         i = 0;
+        while(i < 10) {
+             printf("%i, ", array[i]);
+             i++;
+         }
+        getchar();
     }
     return 0;
 }
